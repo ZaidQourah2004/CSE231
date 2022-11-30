@@ -2,7 +2,7 @@
 # Project 9
 # This program will use lists, sets, tuples, dictionaries and functions to \
 # open and read "prices" file and "securities" file. Both files contain data \
-# that relates to NYSTE from 2010-2016 and more specifically company stocks \
+# that relates to NYSE from 2010-2016 and more specifically company stocks \
 # and company codes. This program examines data from about 2010-2016 and making \ 
 # a program that displays some information to the user. Using several functions \
 # This program finds the maximum stock price of a user-chosen company on the NYSE \
@@ -59,7 +59,7 @@ def open_file():
 def read_file(securities_fp):
     """
     This function takes the securities filepointer as a parameter and opens the file\
-    This function creates a set of all companies in the NYSTE, and also a dictionary \
+    This function creates a set of all companies in the NYSE, and also a dictionary \
     of information regarding each company using the info from the paramter.
     """
     fp = securities_fp

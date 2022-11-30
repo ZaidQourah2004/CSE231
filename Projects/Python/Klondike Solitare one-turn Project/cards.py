@@ -83,7 +83,7 @@ class Deck( object ):
 
     def shuffle( self ):
         """ Shuffle deck using shuffle method in random module. """
-        #random.shuffle(self.__deck)
+        random.shuffle(self.__deck)
 
     def deal( self ):
         """ Return top card from deck (return None if deck empty). """

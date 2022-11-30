@@ -1,1 +1,50 @@
+import random
+import math
+print("Welcome to Zaid's brokerage")
+customer_name = input("\nPlease enter your full name for assistance: ")
+credit = random.randint(600, 840)
+property_price = int(input("\nInput the price of the property you plan to purchase: "))
+down_payment = int(input("\nInput the downpayment that you wish to pay for this property: "))
 
+if credit > 800:
+    intrest_rate = 0.03
+
+elif credit > 740:
+    intrest_rate = 0.035
+
+elif credit > 680:
+    intrest_rate = 0.05
+
+elif credit > 650:
+    intrest_rate = 0.06
+
+else:
+    intrest_rate = 0.07
+
+
+
+
+
+years = int(input("\nHow many years would you like to pay off the mortage: "))
+
+principal = property_price - down_payment
+
+months = 12
+
+mortgage_monthly = math.ceil((((principal * (intrest_rate / months) * (1 +(intrest_rate / months))**(months * years)) / ((1 +(intrest_rate / months))**(months * years) - 1))))
+
+mortgage_total = math.ceil(mortgage_monthly *months * years )
+
+print("\nSince your credit score is {}; your fixed intrest rate will be {:.2f}% .".format(credit, (100*intrest_rate)))
+
+print("\nOver the next {} years you will have to pay {:,} $, which is equivalent to {:,} $ a month.".format(years, mortgage_total, mortgage_monthly))
+
+print("\nDear {},".format(customer_name))
+
+if (mortgage_total + down_payment) > property_price:
+    print("\nThis means that over the next {} years you will be paying {:,} $ more than the original value of the property.".format(years, (mortgage_total + down_payment) - property_price))
+else:
+    print("\nThis means that over the next {} years you will be paying {:,} $ less than the original value of the property.".format(years, abs((mortgage_total + down_payment) - property_price)))
+
+print("\nBest regards,")
+print("Zaid")
